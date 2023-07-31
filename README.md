@@ -8,6 +8,8 @@ The colors and design are basic so the user can customize it easily. I added a p
 
 Included are some sample blog posts in the \_posts directory.
 
+For SEO, rename customize_sitemap.js to sitemap.js. Add in your infomation.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
