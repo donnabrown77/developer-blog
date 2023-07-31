@@ -16,13 +16,10 @@ export const generateMetadata = ({ params }: any) => {
 const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 
-  let MDXContent;
-
   // 404 if the post does not exist.
   if (!post) notFound();
-  else {
-    MDXContent = useMDXComponent(post!.body.code);
-  }
+
+  const MDXContent = useMDXComponent(post!.body.code);
 
   const components = {
     pre: Pre,
@@ -37,7 +34,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </span>
       </p>
       <article>
-        <MDXContent components={components} />
+        <MDXContent post />
       </article>
     </div>
   );
