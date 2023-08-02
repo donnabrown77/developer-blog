@@ -29,7 +29,7 @@ export const Pre = ({ ...props }) => {
           {lang}
           <CopyButton text={code} />
         </div>
-        <div className='mx-4 pt-4 pb-4'>{code}</div>
+        <div className='mx-4 pt-4 pb-4  dark:text-black'>{code}</div>
       </div>
     </pre>
   );
