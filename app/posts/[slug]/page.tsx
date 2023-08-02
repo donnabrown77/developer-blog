@@ -3,6 +3,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { format, parseISO } from "date-fns";
 import { notFound } from "next/navigation";
 import { Pre } from "@/components/Pre";
+import type { PreProps } from "types";
 
 export const generateStaticParams = async () =>
   allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));
@@ -21,7 +22,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   const MDXContent = useMDXComponent(post!.body.code);
 
-  const components = {
+  const mdxComponents = {
     pre: Pre,
   };
 
@@ -34,7 +35,8 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </span>
       </p>
       <article>
-        <MDXContent post />
+        {/* TODO does not display all style info */}
+        <MDXContent components={mdxComponents} />
       </article>
     </div>
   );

@@ -41,12 +41,6 @@ type DataProps = {
   };
 };
 
-export type PreProps = {
-  children: ReactNode[];
-  raw: any;
-  [props: string]: string;
-};
-
 export type ProjectsProps = {
   data: Repository[];
 };

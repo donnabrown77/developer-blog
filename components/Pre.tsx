@@ -13,8 +13,10 @@ import type { PreProps } from "types";
  * language, and a copy button to copy the display code.
  */
 
-export const Pre = ({ children, raw, ...props }: PreProps) => {
+export const Pre = ({ ...props }) => {
   const lang = props["data-language"] || "shell";
+
+  const code = props["raw"];
 
   return (
     <pre {...props} className={"p-0"}>
@@ -25,9 +27,9 @@ export const Pre = ({ children, raw, ...props }: PreProps) => {
           }
         >
           {lang}
-          <CopyButton text={raw} />
+          <CopyButton text={code} />
         </div>
-        <div className='mx-4 pt-4 pb-4'>{children}</div>
+        <div className='mx-4 pt-4 pb-4'>{code}</div>
       </div>
     </pre>
   );
