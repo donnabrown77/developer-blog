@@ -3,7 +3,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { format, parseISO } from "date-fns";
 import { notFound } from "next/navigation";
 import { Pre } from "@/components/Pre";
-import type { PreProps } from "types";
 
 export const generateStaticParams = async () =>
   allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));

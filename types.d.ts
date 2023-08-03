@@ -1,9 +1,3 @@
-export type PreProps = {
-  children: ReactNode[];
-  raw: any;
-  [props: string]: string;
-};
-
 export type PrimaryLanguage = {
   color: string;
   id: string;
