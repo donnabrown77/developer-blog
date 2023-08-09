@@ -1,8 +1,11 @@
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import type { MDXComponents } from "mdx/types";
 import { format, parseISO } from "date-fns";
 import { notFound } from "next/navigation";
-import { Pre } from "@/components/Pre";
+import { CopyButton } from "@/components/CopyButton";
+import "../../globals.css";
 
 export const generateStaticParams = async () =>
   allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));
@@ -21,8 +24,35 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   const MDXContent = useMDXComponent(post!.body.code);
 
-  const mdxComponents = {
-    pre: Pre,
+  const mdxComponents: MDXComponents = {
+    // Override the default <pre> element
+    pre: ({
+      children,
+      ...props
+    }: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => {
+      const propsObj = { ...props };
+      const propsValues = Object.values(propsObj);
+
+      const [dataLineNumbers, dataLanguage, code] = propsValues;
+      const lang = dataLanguage || "shell";
+
+      return (
+        // TODO add line numbers
+        <pre className={"p-0"}>
+          <div className='bg-gray-50 rounded-md overflow-x-auto'>
+            <div
+              className={
+                "bg-gray-200 dark:text-black flex items-center relative px-4 py-2 text-sm font-sans justify-between rounded-t-md"
+              }
+            >
+              {lang}
+              <CopyButton text={code} />
+            </div>
+            {children}
+          </div>
+        </pre>
+      );
+    },
   };
 
   return (
@@ -34,7 +64,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </span>
       </p>
       <article>
-        {/* TODO does not display all style info */}
         <MDXContent components={mdxComponents} />
       </article>
     </div>
