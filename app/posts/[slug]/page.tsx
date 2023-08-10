@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { DetailedHTMLProps, HTMLAttributes, Children } from "react";
 import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
@@ -33,12 +33,12 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       const propsObj = { ...props };
       const propsValues = Object.values(propsObj);
 
-      const [dataLineNumbers, dataLanguage, code] = propsValues;
+      const [, , dataLanguage, dataTheme, code] = propsValues;
       const lang = dataLanguage || "shell";
 
       return (
-        // TODO add line numbers
-        <pre className={"p-0"}>
+        // TODO figure out how to add line numbers
+        <pre data-language={lang} data-theme={dataTheme} className={"p-0"}>
           <div className='bg-gray-50 rounded-md overflow-x-auto'>
             <div
               className={
@@ -48,7 +48,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
               {lang}
               <CopyButton text={code} />
             </div>
-            {children}
+            <div className={"p-2"}>{children}</div>
           </div>
         </pre>
       );

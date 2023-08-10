@@ -1,5 +1,6 @@
 import React from "react";
 import { CopyButton } from "./CopyButton";
+import { PreProps } from "@/types";
 
 /**
  * When the copy button is clicked, text is stored in the
@@ -12,7 +13,7 @@ import { CopyButton } from "./CopyButton";
  * language, and a copy button to copy the display code.
  */
 
-export const Pre = ({ ...props }) => {
+export const Pre = ({ children, ...props }: PreProps) => {
   const lang = props["data-language"] || "shell";
 
   const code = props["raw"];
