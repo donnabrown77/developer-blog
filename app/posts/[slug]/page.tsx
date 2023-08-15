@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, Children } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { allPosts } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
@@ -9,6 +9,7 @@ import "../../globals.css";
 
 export const generateStaticParams = async () =>
   allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));
+
 export const generateMetadata = ({ params }: any) => {
   const post = allPosts.find(
     (post: any) => post._raw.flattenedPath === params.slug
@@ -26,18 +27,16 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   const mdxComponents: MDXComponents = {
     // Override the default <pre> element
-    pre: ({
+    pre: function ({
       children,
       ...props
-    }: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) => {
+    }: DetailedHTMLProps<HTMLAttributes<HTMLPreElement>, HTMLPreElement>) {
       const propsObj = { ...props };
       const propsValues = Object.values(propsObj);
-
       const [, , dataLanguage, dataTheme, code] = propsValues;
       const lang = dataLanguage || "shell";
 
       return (
-        // TODO figure out how to add line numbers
         <pre data-language={lang} data-theme={dataTheme} className={"p-0"}>
           <div className='bg-gray-50 rounded-md overflow-x-auto'>
             <div
@@ -48,6 +47,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
               {lang}
               <CopyButton text={code} />
             </div>
+
             <div className={"p-2"}>{children}</div>
           </div>
         </pre>
