@@ -35,24 +35,6 @@ module.exports = {
               "p::before": { display: "none" },
               "p::after": { display: "none" },
             },
-            a: {
-              textDecoration: "none",
-              borderBottom: `2px solid ${colors.cyan[800]}`,
-              color: colors.cyan[400],
-              transition:
-                "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
-              "&:hover": {
-                color: `${colors.zinc[900]} !important`,
-                borderBottomColor: `${colors.cyan[200]} !important`,
-                background: colors.cyan[200],
-              },
-            },
-            code: {
-              color: "#86e1fc",
-              "&::before": { content: `"" !important` },
-              "&::after": { content: `"" !important` },
-              fontWeight: "normal",
-            },
           },
           "[data-rehype-pretty-code-fragment]:nth-of-type(2) pre": {
             "[data-line]::before": {

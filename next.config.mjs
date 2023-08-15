@@ -9,13 +9,20 @@ const nextConfig = {
     mdxRs: false,
   },
 };
-// TODO Doesn't show line numbers with next js 13.
-// want to know why
+
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  keepBackground: false,
+  theme: JSON.parse(
+    fs.readFileSync(require.resolve("./assets/moonlight-ii.json"), "utf-8")
+  ),
+};
+
 const withMDX = createMDX({
   options: {
     extension: /\.mdx?$/,
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    remarkPlugins: [],
+    rehypePlugins: [[rehypePrettyCode, options]],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
