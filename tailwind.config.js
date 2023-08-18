@@ -36,6 +36,11 @@ module.exports = {
               "p::after": { display: "none" },
             },
           },
+          code: {
+            "&::before": { content: `"" !important` },
+            "&::after": { content: `"" !important` },
+            fontWeight: "normal",
+          },
           "[data-rehype-pretty-code-fragment]:nth-of-type(2) pre": {
             "[data-line]::before": {
               content: "counter(line)",
@@ -44,11 +49,8 @@ module.exports = {
               width: "1rem",
               marginRight: "1rem",
               textAlign: "right",
-              color: colors.slate[600],
             },
-            "[data-highlighted-line]::before": {
-              color: colors.slate[400],
-            },
+            "[data-highlighted-line]::before": {},
           },
         },
       },

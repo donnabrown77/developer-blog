@@ -6,6 +6,7 @@ import { visit } from "unist-util-visit";
 const options: import("rehype-pretty-code").Options = {
   theme: {
     light: "github-light",
+    dark: "github-dark-dimmed",
   },
 };
 

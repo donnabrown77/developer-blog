@@ -1,4 +1,3 @@
-import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
 // https://github.com/vercel/next.js/issues/46659
 /** @type {import('next').NextConfig} */
@@ -13,9 +12,6 @@ const nextConfig = {
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
   keepBackground: false,
-  theme: JSON.parse(
-    fs.readFileSync(require.resolve("./assets/moonlight-ii.json"), "utf-8")
-  ),
 };
 
 const withMDX = createMDX({
