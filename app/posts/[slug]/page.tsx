@@ -37,7 +37,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
       const lang = dataLanguage || "shell";
 
       return (
-        <pre data-language={lang} data-theme={dataTheme} className={"p-0"}>
+        <pre data-language={lang} data-theme={dataTheme} className={"py-4"}>
           <div className='bg-gray-50 rounded-md overflow-x-auto'>
             <div
               className={
