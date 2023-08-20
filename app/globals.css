@@ -47,43 +47,6 @@ code > [data-line]::before {
   color: gray;
 }
 
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
+code[data-line-numbers] > [data-line]::before {
   width: 2rem;
-}
-
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
-  width: 3rem;
-}
-
-.prose {
-  @apply max-w-[55rem] sm:text-lg md:text-xl !leading-7 sm:!leading-9;
-}
-
-[data-line] {
-  @apply border-l-2 border-l-transparent px-6 border-l-2 border-l-transparent;
-}
-
-[data-highlighted-line] {
-  background: rgba(200, 200, 255, 0.1);
-  @apply border-l-blue-400;
-}
-
-[data-chars-id] {
-  @apply shadow-none p-1 border-b-2;
-}
-
-[data-chars-id] span {
-  @apply !text-inherit;
-}
-
-[data-chars-id="v"] {
-  @apply !text-pink-300 bg-rose-800/50 border-b-pink-600 font-bold;
-}
-
-[data-chars-id="s"] {
-  @apply !text-yellow-300 bg-yellow-800/50 border-b-yellow-600 font-bold;
-}
-
-[data-chars-id="i"] {
-  @apply !text-purple-200 bg-purple-800/50 border-b-purple-600 font-bold;
 }
