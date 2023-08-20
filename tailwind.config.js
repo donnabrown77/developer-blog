@@ -50,7 +50,6 @@ module.exports = {
               marginRight: "1rem",
               textAlign: "right",
             },
-            "[data-highlighted-line]::before": {},
           },
         },
       },
