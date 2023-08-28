@@ -20,6 +20,7 @@ const PostCard = (post: Post) => {
             </time>
           </dd>
         </dl>
+        <span className='text-gray-500 dark:text-gray-400'>{post.author}</span>
         <div className='space-y-5 xl:col-span-3'>
           <div className='space-y-6'>
             <div>
