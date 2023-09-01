@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
-    "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.12",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
