@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import PostCard from "@/components/PostCard";
-import SearchInput from "@/components/MagnifyingGlass";
+import MagnfiyingGlass from "@/components/MagnifyingGlass";
 import "./globals.css";
+import MagnifyingGlass from "@/components/MagnifyingGlass";
 
+// TODO https://github.com/iamvishnusankar/next-sitemap/tree/master/examples/no-index-sitemaps
+// TODO https://www.npmjs.com/package/next-sitemap
+// TODO https://www.linkedin.com/posts/itsrennyman_creating-a-blog-as-a-developer-is-a-must-activity-7011593923408080896-eOB7/?originalSubdomain=rs
 export default function Home() {
-  // SearchInput will return an array of topics or nothing
+  // handleInput will contain an array of topics or nothing
   // if there is something returned, look for a matching post
   // then display matching posts
   const [topic, setTopic] = useState<string>("");
@@ -49,7 +53,7 @@ export default function Home() {
             size={100}
             className='block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100'
           ></input>
-          <SearchInput />
+          <MagnifyingGlass />
         </div>
         {posts.map((post, idx) => (
           <div key={idx}>
