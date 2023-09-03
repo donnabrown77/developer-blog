@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import PostCard from "@/components/PostCard";
-import MagnfiyingGlass from "@/components/MagnifyingGlass";
-import "./globals.css";
 import MagnifyingGlass from "@/components/MagnifyingGlass";
+import "./globals.css";
 
 // TODO https://github.com/iamvishnusankar/next-sitemap/tree/master/examples/no-index-sitemaps
 // TODO https://www.npmjs.com/package/next-sitemap

@@ -52,7 +52,6 @@ export default makeSource({
   contentDirPath: "_posts",
   documentTypes: [Post],
   mdx: {
-    // rehypePlugins: [[rehypePrettyCode, rehypeoptions]],
     // Create a visitor function that traverses the node tree of the content
     // and extracts the unmodified (raw text) content from all code elements nested
     // inside the pre tag. We'll store this text content on the pre node itself.
