@@ -58,8 +58,7 @@ export default makeSource({
     // To traverse the node tree, we'll use the visit function from the unist-util-visit
     // package.
     // This visitor function should be added to the list of existing Rehype plugins.
-    // This will give us a way to keep the unmodified code content,
-    // which we can access later in Pre.tsx from the node's raw property.
+    // This will give us a way to keep the unmodified code content.
     rehypePlugins: [
       () => (tree) => {
         visit(tree, (node) => {
