@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Repository } from "../types";
-import Stars from "./Stars";
-import Forks from "./Forks";
+import Stars from "./Star";
+import Forks from "./Fork";
 /**
  *
  * @param url of github projects, name description, language, stars, forks

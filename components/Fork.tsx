@@ -1,7 +1,7 @@
-const Forks = () => {
+const Fork = () => {
   return (
     <svg
-      aria-label='forks'
+      aria-label='Fork'
       role='img'
       height='16'
       viewBox='0 0 16 16'
@@ -19,4 +19,4 @@ const Forks = () => {
   );
 };
 
-export default Forks;
+export default Fork;

@@ -1,4 +1,4 @@
-const Stars = () => {
+const Star = () => {
   return (
     <svg
       aria-label='stars'
@@ -19,4 +19,4 @@ const Stars = () => {
   );
 };
 
-export default Stars;
+export default Star;
