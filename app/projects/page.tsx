@@ -13,7 +13,7 @@ export default async function Projects() {
   // You will need to generate a personal access token from github. The
   // github token is included in the .env.local file in this format:
   // GITHUB_TOKEN="Your token"
-  // Go to Githb: Choose generate new token ( classic )
+  // Go to Github: Choose generate new token ( classic )
   // You’ll see a menu with various permissions you can check. Everything is unchecked by default. At a minimum,
   // you’ll want to check “public_repo”, which is under “repo”, and you’ll also want to check “read:user”,
   // which is under “user.” Then click “Generate token”.
