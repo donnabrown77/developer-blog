@@ -2,7 +2,6 @@
 // between a Server and Client Component module graph.
 
 import { useState } from "react";
-import "./ClipBoard";
 import ClipBoard from "./ClipBoard";
 
 type Text = {

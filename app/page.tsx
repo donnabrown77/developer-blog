@@ -8,7 +8,6 @@ import "./globals.css";
 
 // TODO https://github.com/iamvishnusankar/next-sitemap/tree/master/examples/no-index-sitemaps
 // TODO https://www.npmjs.com/package/next-sitemap
-// TODO https://www.linkedin.com/posts/itsrennyman_creating-a-blog-as-a-developer-is-a-must-activity-7011593923408080896-eOB7/?originalSubdomain=rs
 export default function Home() {
   // handleInput will contain an array of topics or nothing
   // if there is something returned, look for a matching post

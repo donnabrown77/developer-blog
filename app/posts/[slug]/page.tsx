@@ -11,7 +11,7 @@ export const generateStaticParams = async () =>
   allPosts.map((post: any) => ({ slug: post._raw.flattenedPath }));
 
 // Dynamic information, such as the current route parameters,
-// can be set by exporting a generateMeta function that returns
+// which can be set by exporting a generateMetadata function that returns
 // a Metadata object.
 export const generateMetadata = ({ params }: any) => {
   const post = allPosts.find(
